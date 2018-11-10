@@ -1,0 +1,36 @@
+name: name
+title: title
+markdown: kramdown
+author: name
+baseurl: ""
+url: ""
+permalink: pretty
+description: description
+
+kramdown: 
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: posts
+      author: name
+      featured-img: /assets/blogposts/img/da-kraplak-727110-unsplash.jpg
+      permalink: /:year/:month/:day/:title 
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+      featured-img: 
+      github-link: 
+      featured-img: https://image.ibb.co/htduXz/malcolm_lightbody_698733_unsplash.jpg
+
+collections:
+  projects:
+    output: true

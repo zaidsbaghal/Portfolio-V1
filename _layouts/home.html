@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+<a id="top"></a>
+  <nav>
+    <ul id='navbar'>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Script for Nav Bar -->
+
+  <script>
+    var nav = document.getElementById('navbar');
+      
+      window.onscroll = function(){
+
+      	if (window.pageYOffset > 50) {
+
+            nav.style.background = "#2E3B39";
+            nav.style.opacity = ".9";
+      	} else { 
+
+            nav.style.background = "transparent";
+            nav.style.boxShadow = "none";
+      	}
+      }
+  </script>
+
+<div id="welcome-section" class="intro">
+  <!-- <h1>Hello World! I'm Zaid.</h1> -->
+  <div class="content">
+      <div class="content-container">
+        <p class="content-container-text">
+          Hello...
+        </p>
+        <ul class="content-container-list">
+          <li class="content-container-list-item">viewers!</li>
+          <li class="content-container-list-item">friends!</li>
+          <li class="content-container-list-item">world!</li>
+          <li class="content-container-list-item">I'm Zaid!</li>
+        </ul>
+      </div>
+    </div>
+  <p id="welcome-desc">Software Engineer | Software Developer | CS Student</p>
+  <div class="social-media">
+    <a href="https://github.com/zaidsbaghal" target="_blank" class="fa fa-github contacts-intro"></a>
+    <a href="https://www.linkedin.com/in/zaidsbaghal/" target="_blank" class="fa fa-linkedin contacts-intro"></a>
+    <a href="https://twitter.com/zaidsbaghal" target="_blank" class="fa fa-twitter contacts-intro"></a>
+    <a href="https://www.instagram.com/zaidsbaghal/" target="_blank" class="fa fa-instagram contacts-intro"></a>
+  </div>
+  <div>
+    <a href="{{ site.baseurl }}/ZaidSBaghalResume.pdf" class="resume" target="_blank">Résumé</a>
+  </div>
+  <div class="arrow bounce">
+      <a id="welcome-arrow" class="fa fa-arrow-down fa-2x" href="#about-me"></a>
+  </div>
+</div>
+
+<div id="about-me" class="about-me">
+  <div id="about-me-box">
+    <h2 class="about-me-header">About Me</h2>
+    <img id="me" src="https://image.ibb.co/kmX1je/me.jpg">
+    <p class="about-text">Hi! My name is Zaid Baghal and I am currently in my fourth year at Rutgers University 
+      pursuing a degree in Computer Science. Some of my hobbies include running, drawing, photography, and filmmaking. 
+      I use this website as a portfolio/blog as well as a showcase for all the things I am working on. 
+      Feel free to look around!
+    </p>
+   <!-- <a href="#" class="more-about-me" target="_blank">More About Me</a> -->
+  </div>
+</div>
+
+<div id="projects" class="work">
+  <h2 class="work-header">Projects</h2>
+  <a href="https://github.com/zaidsbaghal/personal-portfolio" target="_blank" class="project project-tile">
+    <img class="project-pic" src="https://image.ibb.co/coWfAK/simple_portfolio.png" alt="project">
+    <div class="project-title">Simple Website/Portfolio</div>
+  </a> 
+  <a href="https://github.com/zaidsbaghal/zaidsbaghal" target="_blank" class="project project-tile">
+    <img class="project-pic" src="https://image.ibb.co/gPXaEe/Jekyll.png" alt="project">
+    <div class="project-title">This website with jekyll integration</div>
+  </a>
+  <a href="https://github.com/zaidsbaghal/randomizer-application" target="_blank" class="project project-tile">
+    <img class="project-pic" src="https://image.ibb.co/jLCNSz/Capture.png" alt="project">
+    <div class="project-title">Randomizer Application</div>
+  </a>
+  <a href="/projects/" class="show-all" target="_blank">See all projects</a>
+</div>
+
+<div id="blog" class="blog-section">
+  <h2 class="blog-header">Blog posts</h2>
+  {% for post in site.posts limit:3 %}
+    <a href="{{ post.url }}" target="_blank" class="project project-tile">
+      <img class="project-pic" src="{{ post.featured-img }}" alt="project">
+      <div class="project-title">{{post.title}} - {{ post.date | date: "%b %-d, %Y" }}</div>
+    </a>
+  {% endfor %}
+  <a href="/blog/" class="show-all" target="_blank">See all posts</a>
+</div>
+
+<div id="contact" class="contact">
+  <div class="contact-header">
+    <h2>Let's Chat... Coffee?</h2>
+  </div>
+  <a id="github-contact" href="https://github.com/zaidsbaghal" target="_blank" class="fa fa-github git contact-icons"></a>
+  <a id="linkedin-contact" href="https://www.linkedin.com/in/zaidsbaghal/" target="_blank" class="fa fa-linkedin linkedin contact-icons"></a>
+  <a id="twitter-contact" href="https://twitter.com/zaidsbaghal" target="_blank" class="fa fa-twitter twitter contact-icons"></a>
+  <a id="instagram-contact" href="https://www.instagram.com/zaidsbaghal/" target="_blank" class="fa fa-instagram insta contact-icons"></a>
+</div>
+
+    {% include analytics.html %}
+
+<footer>
+    <a id="topbtn" href="#top">Beam Me Up, Scotty!</a>
+    <p>Created by Zaid Baghal. © 2018 All Rights Reserved.</p>
+</footer>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<nav>
+        <ul id='navbar'>
+          <li><a href="{% link index.md %}">Home</a></li>
+          <li><a href="{% link blog.md %}">Archive</a></li>
+          <li><a href="{% link projects.md %}">Projects</a></li>
+         <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+</nav>
+    
+      <!-- Script for Nav Bar -->
+    
+      <script>
+        var nav = document.getElementById('navbar');
+          
+          window.onscroll = function(){
+    
+              if (window.pageYOffset > 50) {
+    
+                nav.style.background = "#2E3B39";
+                nav.style.opacity = ".9";
+              } else { 
+    
+                nav.style.background = "transparent";
+                nav.style.boxShadow = "none";
+              }
+          }
+      </script>
+    
